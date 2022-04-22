@@ -1,0 +1,10 @@
+.delete-btn {
+    width: 30px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    position: absolute;
+    right: 10px;
+    top:10px;
+    cursor: pointer;
+}
