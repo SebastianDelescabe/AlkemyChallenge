@@ -4,13 +4,13 @@ import { getInfoById } from '../../helper/getInfoById';
 import swalert from 'sweetalert';
 
 const Detail = () => {
+    
     const token = sessionStorage.getItem('token')
     let query = new URLSearchParams(window.location.search);
     let recipeID = query.get('recipeId');
 
     const [detail, setDetail] = useState([])
     const [loading, setLoading] = useState(true)
-
 
     useEffect(() => {
 

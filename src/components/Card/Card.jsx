@@ -11,7 +11,7 @@ const Card = ({ data, deleteRecipe }) => {
                     <img src={data.image} width={305} height={300} alt="Not Found" />
                 </Link>
                 <div className="card-body">
-                    <h3 className="card-title m2">{data.title.substring(0, 30)}...</h3>
+                    <h3 className="card-title m2">{data.title.substring(0,15)}...</h3>
                     {
                         data.vegetarian ? <p className='my-3'><em>Plato vegetariano</em></p> : <p className='my-3'><em>Plato carnivoro</em></p>
                     }

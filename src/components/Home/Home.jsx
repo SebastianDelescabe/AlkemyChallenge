@@ -1,9 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import { Navigate } from 'react-router-dom';
-import { getInfo } from '../../helper/getInfo'
-import { handleHealtScore, handleRedyIn, handleTotalPrice } from '../../helper/logicPriceHealtMinutes';
-import { logout } from '../../helper/logout';
-import Card from '../Card/Card';
+import {
+  handleHealtScore,
+  handleRedyIn,
+  handleTotalPrice,
+  getInfo,
+  logout
+} from '../../helper/index';
+import { Card, Search } from '../index';
 import swal from 'sweetalert';
 
 const Home = () => {
@@ -39,7 +43,6 @@ const Home = () => {
 
   }, [recipes.length]);//Esta atento al recipes.length para cuando no haya ningun plato en pantalla, se vuelva a cargar la informacion
 
-
   const deleteRecipe = (id) => {  //Trae el id del plato clickeado 
     const filterData = menuRecipes.filter(recipe => recipe.id !== id); //Guardo en un arreglo todos los platos distintos al del id clickeado para eliminar
     localStorage.setItem('recipes', JSON.stringify(filterData)); //Guardo los cambios en localStorage para que perduren al recargar o cambiar de página
@@ -62,6 +65,7 @@ const Home = () => {
         <h5 >Precio del menú: $ {handleTotalPrice(menuRecipes)}</h5>
         <h5 >Preparación: {handleRedyIn(menuRecipes)} Minutos</h5>
         <h5 >HealScore: {handleHealtScore(menuRecipes)}</h5>
+        <Search/>
       </div>
 
       <div className='row'>
